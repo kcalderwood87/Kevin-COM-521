@@ -61,7 +61,6 @@ plot(density(week2.dataset))
 
 #Recode negative values as NA
 
-sort(week2.dataset)
 tmp.week2.dataset <- week2.dataset #Create a temporary dataset for week2.dataset
 tmp.week2.dataset[tmp.week2.dataset < 0] <- NA #Re-code all negative values as missing
 sort(tmp.week2.dataset) #Confirm only positive numbers in the dataset
@@ -78,11 +77,12 @@ log(tmp.week2.dataset)
 #Create new histograms, boxplots, and mean, median, and standard deviation
 #I made these using the log transformed data and removed missing values
 
-tmp1.week2.dataset <- na.omit(tmp.week2.dataset) #Create a temporary dataset to remove all missing values 
-list(tmp1.week2.dataset) #Check to make sure all missing values are removed  
-hist(log(tmp1.week2.dataset)) #Create a histogram for the new dataset
-boxplot(log(tmp1.week2.dataset)) #Create a boxplot for the new dataset
-plot(density(log(tmp1.week2.dataset))) #Create a desnity plot without the missing values
-mean(log(tmp1.week2.dataset)) #Calculate the mean for the new dataset
-median(log(tmp1.week2.dataset)) #Calculate the median for the new dataset
-sd(log(tmp1.week2.dataset)) #Calculate the standard deviation for the new dataset
+tmp1.week2.dataset <- na.omit(tmp.week2.dataset) #Create a temporary dataset to remove all missing values
+tmp2.week2.dataset <- log(tmp1.week2.dataset) #Create a temporary dataset to log the dataset that removed all missing values
+list(tmp2.week2.dataset) #Check to make sure all missing values are removed and the values are logged  
+hist(tmp2.week2.dataset) #Create a histogram for the new dataset
+boxplot(tmp2.week2.dataset) #Create a boxplot for the new dataset
+plot(density(tmp2.week2.dataset)) #Create a desnity plot without the missing values
+mean(tmp2.week2.dataset) #Calculate the mean for the new dataset
+median(tmp2.week2.dataset) #Calculate the median for the new dataset
+sd(tmp2.week2.dataset) #Calculate the standard deviation for the new dataset
