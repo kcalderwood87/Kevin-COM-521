@@ -68,6 +68,7 @@ Mergedviews$Group.1 <- as.Date(Mergedviews$Group.1, "%m/%d/%Y")
 list(Mergedviews$Group.1)
 class(Mergedviews$Group.1)
 Mergedviews <- Mergedviews[order(as.Date(Mergedviews$Group.1, format="%Y/%m/%d")),]
+list(Mergedviews)
 
 ###PC6 Part 2
 
