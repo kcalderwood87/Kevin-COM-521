@@ -40,8 +40,8 @@ list(Monthlypageviews)
 #Create a data frame with an estimate for the number of mobile page views per month
 
 objects(COS_Statistics_Mobile_Sessions)
-tapply(COS_Statistics_Mobile_Sessions$Sessions, COS_Statistics_Mobile_Sessions$Month, sum)
-Mobilepageviews = aggregate(COS_Statistics_Mobile_Sessions$Sessions, list(COS_Statistics_Mobile_Sessions$Month), sum)
+tapply(COS_Statistics_Mobile_Sessions$Sessions*COS_Statistics_Mobile_Sessions$PagesPerSession, COS_Statistics_Mobile_Sessions$Month, sum)
+Mobilepageviews = aggregate(COS_Statistics_Mobile_Sessions$Sessions*COS_Statistics_Mobile_Sessions$PagesPerSession, list(COS_Statistics_Mobile_Sessions$Month), sum)
 class(Mobilepageviews)
 list(Mobilepageviews)
 
