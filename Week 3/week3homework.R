@@ -48,24 +48,31 @@ hist(week3_dataset_kevin$y)
 
 summary(week2.dataset)
 summary(week3_dataset_kevin$x)
-week2.dataset==week3_dataset_kevin$x
-#The week2.dataset vector is equivalent to the x column in week3 dataset
+a <- data.frame(week2.dataset)
+b <- data.frame(week3_dataset_kevin$x)
+install.packages("compare")
+library(compare)
+compare(a, b, ignoreNames=T)
+#The week2.dataset vector is not equivalent to the x column in week3 dataset
 
 #Visualize the data using ggplot2
 
 install.packages("ggplot2")
 library(ggplot2)
-tmp.week3_dataset <- week3_dataset_kevin
-j <- as.logical(tmp.week3_dataset$j)
-ggplot(data=tmp.week3_dataset) + geom_point() + aes(x=x, y=y, color=i, shape="j", size=k)
+ggplot(data=week3_dataset_kevin) + geom_point() + aes(x=x, y=y, color=i, shape=as.logical(j), size=k)
 
 #Recode the data
+
+tmp.week3_dataset <- week3_dataset_kevin
 
 i <- as.logical(tmp.week3_dataset$i)
 list(i)
 class(i)
+
+j <- as.logical(tmp.week3_dataset$j)
 list(j)
 class(j)
+
 k <- factor(tmp.week3_dataset$k, labels = c("none", "some", "lots", "all"))
 list(k)
 class(k)
@@ -73,8 +80,11 @@ class(k)
 #Recode the data and then revert it back
 
 i[i == FALSE] <- NA
+list(i)
 i[is.na(i)] <- 0
+list(i)
 i <- as.logical(tmp.week3_dataset$i)
+list(i)
 
 #Find the appropriate summary statistics for variable j
 
