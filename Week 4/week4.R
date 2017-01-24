@@ -49,10 +49,9 @@ list(Mobilepageviews)
 
 #Merge the two datasets together
 
-Mergedviews = merge(Monthlypageviews, Mobilepageviews, by = "Group.1")
+Mergedviews = merge(Monthlypageviews, Mobilepageviews, all.x=TRUE, all.y=TRUE, by = "Group.1")
 list(Mergedviews)
-is.na(Mobilepageviews)
-is.na(Monthlypageviews)
+is.na(Mergedviews)
 
 ###PC6
 
