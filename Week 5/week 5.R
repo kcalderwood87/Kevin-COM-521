@@ -1,5 +1,7 @@
 ###PC0 Load the population dataset
 
+setwd("C:/Users/Kevin/Documents/")
+getwd()
 population <- read.delim("GitHub/uwcom521-assignments/week_05/com521_population.tsv", sep="\t", header=TRUE)
 populationmeanx <- mean(population$x)
 
@@ -10,14 +12,12 @@ samplesize <- nrow(week3_dataset_kevin)
 meanx <- mean(week3_dataset_kevin$x)
 sdx <- sd(week3_dataset_kevin$x)
 standarderrorx <- sdx/sqrt(samplesize)
-right95 <- meanx+1.96*standarderrorx
-left95 <- meanx-1.96*standarderrorx
-
+right95 <- meanx+(1.96*standarderrorx)
+left95 <- meanx-(1.96*standarderrorx)
 
 ###PC1b Calculate the 95% confidence interval for variable x with t.test function
 
 t.test(week3_dataset_kevin$x)
-
 
 ###PC1c Compare the mean from your sample and the CI to the true population mean
 
@@ -54,21 +54,26 @@ Random <- runif(10000, 0, 9)
 ###PC4b Take the mean and draw a histogram of the randomly generated vector
 
 mean(Random)
+sd(Random)
 hist(Random)
+summary(Random)
 
 ###PC4c-d Take a random sample, calculate the means, and draw a histogram 
 
 Random100 <- replicate(100, sample(Random, 2))
 Random100means <- colMeans(Random100)
 hist(Random100means)
+summary(Random100means)
 
 Random100a <- replicate(100, sample(Random, 10))
 Random100ameans <- colMeans(Random100a)
 hist(Random100ameans)
+summary(Random100ameans)
 
 Random100b <- replicate(100, sample(Random, 100))
 Random100bmeans <- colMeans(Random100b)
 hist(Random100bmeans)
+summary(Random100bmeans)
 
 ###PC5 Repeat PC4 using a normal distribution 
 
@@ -78,11 +83,15 @@ hist(Randomnormal)
 
 Randomnormal100 <- replicate(100, sample(Randomnormal, 2))
 Randomnormal100means <- colMeans(Randomnormal100)
+hist(Randomnormal100means)
+summary(Randomnormal100means)
 
 Randomnormal100a <- replicate(100, sample(Randomnormal, 10))
 Randomnormal100ameans <- colMeans(Randomnormal100a)
 hist(Randomnormal100ameans)
+summary(Randomnormal100ameans)
 
 Randomnormal100b <- replicate(100, sample(Randomnormal, 100))
 Randomnormal100bmeans <- colMeans(Randomnormal100b)
 hist(Randomnormal100bmeans)
+summary(Randomnormal100bmeans)
