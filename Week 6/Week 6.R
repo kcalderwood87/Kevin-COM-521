@@ -36,7 +36,11 @@ high <- c(group4ls)
 
 ###t-test for low and all
 
+<<<<<<< HEAD
 t.test(control, all)
+=======
+t.test(low, all)
+>>>>>>> origin/master
 
 ###t-test for high and control
 
