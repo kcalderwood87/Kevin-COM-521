@@ -95,3 +95,5 @@ Randomnormal100b <- replicate(100, sample(Randomnormal, 100))
 Randomnormal100bmeans <- colMeans(Randomnormal100b)
 hist(Randomnormal100bmeans)
 summary(Randomnormal100bmeans)
+
+
