@@ -1,7 +1,7 @@
 #PC0 Load the Week 3 Dataset
 
 library(readr)
-week3_dataset_kevin <- read_csv("~/Google Drive/GitHub/Kevin/Week 3/week3_dataset-kevin.csv")
+week3_dataset_kevin <- read_csv("~/Google Drive/Kevin-COM-521/Week 3/week3_dataset-kevin.csv")
 View(week3_dataset_kevin)
 
 #PC1
@@ -82,7 +82,7 @@ stargazer(yxlm.full, type = "text")
 #PC7 Load the data set and write linear models
 
 library(haven)
-Halloween2012_2014_2015_PLOS <- read_dta("~/Google Drive/GitHub/Kevin/Week 7/Halloween2012-2014-2015_PLOS.dta")
+Halloween2012_2014_2015_PLOS <- read_dta("~/Google Drive/Kevin-COM-521/Week 7/Halloween2012-2014-2015_PLOS.dta")
 View(Halloween2012_2014_2015_PLOS)
 
 #PC7a
@@ -129,16 +129,20 @@ obama.2014 <- d.2014$obama
 fruit.2015 <- d.2015$fruit
 obama.2015 <- d.2015$obama
 
+###2012 model
+
 fruit.obama.2012 <- lm(fruit.2012 ~ obama.2012, data = d.2012)
 fruit.obama.2012
 summary(fruit.obama.2012)
+
+###2014 model
 
 fruit.obama.2014 <- lm(fruit.2014 ~ obama.2014, data = d.2014)
 fruit.obama.2014
 summary(fruit.obama.2014)
 
+#2015 model
+
 fruit.obama.2015 <- lm(fruit.2015 ~ obama.2015, data = d.2015)
 fruit.obama.2015
 summary(fruit.obama.2015)
-
-
